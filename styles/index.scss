@@ -1,0 +1,36 @@
+/// Transitions utilities.
+/// From:
+/// https://github.com/infrastry/infrastry/blob/main/packages/infrastry/src/styles/core/abstracts/transition.scss
+///
+/// @param {List} $props - Properties to be applied.
+@mixin trans($props...) {
+  $result: ();
+  @for $i from 1 through length($props) {
+    $prop: nth($props, $i);
+    $result: append($result, $prop);
+    $result: append($result, unquote('0.3s ease'));
+    @if $i != length($props) {
+      $result: append($result, unquote(','));
+    }
+  }
+
+  transition: $result;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+$screen-mobile-width: 996px;
+
+@mixin screen-mobile {
+  @media (max-width: $screen-mobile-width) {
+    @content;
+  }
+}
+
+@mixin screen-desktop {
+  @media (min-width: ($screen-mobile-width + 1px)) {
+    @content;
+  }
+}

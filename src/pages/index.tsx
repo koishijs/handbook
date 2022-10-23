@@ -8,9 +8,15 @@ import {
   mdiNodejs,
 } from '@mdi/js'
 import Icon from '@mdi/react'
+import CodeBlock from '@theme/CodeBlock'
 import Layout from '@theme/Layout'
+import TabItem from '@theme/TabItem'
+import Tabs from '@theme/Tabs'
+import clsx from 'clsx'
 import React, { useState } from 'react'
 import styles from './index.module.scss'
+import { useColorMode } from '@docusaurus/theme-common'
+import Link from '@docusaurus/Link'
 
 interface Option {
   icon: string
@@ -29,8 +35,22 @@ const options: Record<string, Option> = {
     children: (
       <>
         <p className={styles['chooser-content-quick-title']}>立即下载</p>
-        <button className="button button--secondary">msi 安装包（推荐）</button>
-        <button className="button button--secondary">zip 便携包</button>
+        <a
+          className="button button--secondary"
+          href="http://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.7.1/koishi-desktop-win-x64-v0.7.1.msi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          msi 安装包（推荐）
+        </a>
+        <a
+          className="button button--secondary"
+          href="http://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.7.1/koishi-desktop-win-x64-v0.7.1.zip"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          zip 便携包
+        </a>
         <a
           className={styles['chooser-content-quick-link']}
           href="https://github.com/koishijs/koishi-desktop/releases"
@@ -50,8 +70,22 @@ const options: Record<string, Option> = {
     children: (
       <>
         <p className={styles['chooser-content-quick-title']}>立即下载</p>
-        <button className="button button--secondary">pkg 安装包（推荐）</button>
-        <button className="button button--secondary">zip 便携包</button>
+        <a
+          className="button button--secondary"
+          href="http://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.7.1/koishi-desktop-osx-x64-v0.7.1.pkg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          pkg 安装包（推荐）
+        </a>
+        <a
+          className="button button--secondary"
+          href="http://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.7.1/koishi-desktop-osx-x64-v0.7.1.zip"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          zip 便携包
+        </a>
         <a
           className={styles['chooser-content-quick-link']}
           href="https://github.com/koishijs/koishi-desktop/releases"
@@ -71,7 +105,14 @@ const options: Record<string, Option> = {
     children: (
       <>
         <p className={styles['chooser-content-quick-title']}>立即下载</p>
-        <button className="button button--secondary">zip 便携包（推荐）</button>
+        <a
+          className="button button--secondary"
+          href="http://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.7.1/koishi-desktop-linux-x64-v0.7.1.zip"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          zip 便携包（推荐）
+        </a>
         <a
           className={styles['chooser-content-quick-link']}
           href="https://github.com/koishijs/koishi-desktop/releases"
@@ -91,8 +132,22 @@ const options: Record<string, Option> = {
     children: (
       <>
         <p className={styles['chooser-content-quick-title']}>立即下载</p>
-        <button className="button button--secondary">标准 Apk（推荐）</button>
-        <button className="button button--secondary">Apk（含 Chromium）</button>
+        <a
+          className="button button--secondary"
+          href="http://ghproxy.com/https://github.com/koishijs/koishi-android/releases/download/v0.0.3/koishi-android-v0.0.3.apk"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          标准 Apk（推荐）
+        </a>
+        <a
+          className="button button--secondary"
+          href="http://ghproxy.com/https://github.com/koishijs/koishi-android/releases/download/v0.0.3/koishi-android-with-chromium-v0.0.3.apk"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Apk（含 Chromium）
+        </a>
         <a
           className={styles['chooser-content-quick-link']}
           href="https://github.com/koishijs/koishi-android/releases"
@@ -112,9 +167,14 @@ const options: Record<string, Option> = {
     children: (
       <>
         <p className={styles['chooser-content-quick-title']}>快速开始</p>
-        <pre>
-          <code>&gt; yarn create koishi</code>
-        </pre>
+        <Tabs>
+          <TabItem value="npm" label="npm">
+            <CodeBlock language="sh">&gt; npm init koishi</CodeBlock>
+          </TabItem>
+          <TabItem value="yarn" label="Yarn" default>
+            <CodeBlock language="sh">&gt; yarn create koishi</CodeBlock>
+          </TabItem>
+        </Tabs>
       </>
     ),
   },
@@ -122,9 +182,18 @@ const options: Record<string, Option> = {
 
 const Chooser: React.FC = () => {
   const [state, setState] = useState('')
+  const { isDarkTheme } = useColorMode()
 
   return (
     <div className={styles['chooser-container']}>
+      <div
+        key={'chooser-option-seleted-background'}
+        className={clsx(
+          styles['chooser-content'],
+          styles['chooser-content-background'],
+          state !== '' && styles['chooser-content-selected']
+        )}
+      />
       {Object.keys(options).map((key) => {
         const { icon, color, darkColor, title, children } = options[key]
         const selected = state === key
@@ -144,7 +213,13 @@ const Chooser: React.FC = () => {
               <Icon
                 className={styles['chooser-option-icon']}
                 path={icon}
-                color={selected ? 'white' : color}
+                color={
+                  selected
+                    ? 'white'
+                    : isDarkTheme && color === 'black'
+                    ? 'white'
+                    : color
+                }
               />
               <p
                 className={styles['chooser-option-title']}
@@ -153,25 +228,31 @@ const Chooser: React.FC = () => {
               />
             </div>
 
-            {selected && (
-              <div
-                key={'chooser-option-seleted'}
-                className={styles['chooser-content']}
-              >
-                <div
-                  className={styles['chooser-content-quick']}
-                  style={{ backgroundColor: color }}
-                  children={children}
-                />
-                <div
-                  className={styles['chooser-content-guide']}
-                  style={{ backgroundColor: darkColor }}
-                >
-                  <Icon path={mdiArrowRight} size="2rem" color="white" />
-                  <p>快速入门</p>
-                </div>
-              </div>
-            )}
+            <div
+              key={`chooser-option-seleted-${key}`}
+              className={clsx(
+                styles['chooser-content'],
+                selected && styles['chooser-content-selected']
+              )}
+            >
+              {selected && (
+                <>
+                  <div
+                    className={styles['chooser-content-quick']}
+                    style={{ backgroundColor: color }}
+                    children={children}
+                  />
+                  <Link
+                    to={`/install/${key}`}
+                    className={styles['chooser-content-guide']}
+                    style={{ backgroundColor: darkColor }}
+                  >
+                    <Icon path={mdiArrowRight} size="2rem" color="white" />
+                    <p>快速入门</p>
+                  </Link>
+                </>
+              )}
+            </div>
           </>
         )
       })}
@@ -181,16 +262,15 @@ const Chooser: React.FC = () => {
 
 const Home: React.FC = () => {
   const { siteConfig } = useDocusaurusContext()
+  const { logo } = siteConfig.themeConfig.navbar as {
+    logo: { alt: string; src: string }
+  }
 
   return (
     <Layout description={siteConfig.tagline}>
       <header className={styles['banner']}>
         <div className="container">
-          <img
-            className={styles['logo']}
-            alt="Koishi Logo"
-            src="/img/logo.svg"
-          />
+          <img className={styles['logo']} alt={logo.alt} src={logo.src} />
           <p className={styles['title-1']}>在任何地方</p>
           <p className={styles['title-2']}>创建你的机器人。</p>
           <p className={styles['description']}>

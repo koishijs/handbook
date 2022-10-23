@@ -1,3 +1,5 @@
+@use '../../styles' as *;
+
 .banner {
   background: #181526;
   padding: 4rem 0 2rem 0;
@@ -42,13 +44,13 @@
     margin: 0 auto;
     text-align: center;
 
-    @media (max-width: 996px) {
+    @include screen-mobile {
       padding: 24px 0;
     }
   }
 
   &-container {
-    max-width: 1000px;
+    max-width: $screen-mobile-width;
     margin: 0 auto 48px auto;
 
     display: grid;
@@ -56,7 +58,7 @@
 
     flex-direction: column;
 
-    @media (max-width: 996px) {
+    @include screen-mobile {
       margin: 0 auto;
 
       display: flex;
@@ -73,20 +75,30 @@
 
     cursor: pointer;
 
-    @media (max-width: 996px) {
+    @include screen-mobile {
       flex-direction: row;
       align-items: center;
       justify-content: start;
+    }
+
+    @include screen-desktop {
+      @include trans(background-color);
     }
 
     &-indicator {
       width: auto;
       height: 0;
 
-      @media (max-width: 996px) {
+      @include screen-mobile {
         width: 6px;
         height: auto;
         align-self: stretch;
+      }
+    }
+
+    & > svg > path {
+      @include screen-desktop {
+        @include trans(fill);
       }
     }
 
@@ -94,7 +106,7 @@
       margin: 12px 0 8px 0;
       width: 100px;
 
-      @media (max-width: 996px) {
+      @include screen-mobile {
         margin: 12px 0;
         width: 64px;
       }
@@ -103,7 +115,7 @@
     &-title {
       margin: 8px 0 28px 0;
 
-      @media (max-width: 996px) {
+      @include screen-mobile {
         margin: 12px 0;
       }
 
@@ -113,7 +125,7 @@
   }
 
   &-content {
-    min-height: 350px;
+    @include trans(height);
 
     grid-row-start: 2;
     grid-column-start: 1;
@@ -122,8 +134,23 @@
     display: flex;
     flex-direction: row;
 
-    @media (max-width: 996px) {
+    height: 0;
+    overflow: hidden;
+
+    @include screen-mobile {
       flex-direction: column;
+
+      &-background {
+        max-height: 0;
+      }
+    }
+
+    &-selected {
+      height: 350px;
+
+      @include screen-mobile {
+        height: auto;
+      }
     }
 
     &-quick {
@@ -155,11 +182,13 @@
 
       & > * {
         display: block;
-        margin: 16px 0;
+        margin: 10px 0;
       }
 
-      & > pre {
-        align-self: stretch;
+      :global {
+        .tabs-container {
+          align-self: stretch;
+        }
       }
     }
 
@@ -175,7 +204,7 @@
 
       cursor: pointer;
 
-      @media (max-width: 996px) {
+      @include screen-mobile {
         justify-content: start;
         align-items: center;
         flex-direction: row;
