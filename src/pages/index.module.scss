@@ -1,0 +1,192 @@
+.banner {
+  background: #181526;
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo {
+  width: min(50vw, 300px);
+  margin: 2rem 0;
+}
+
+.title {
+  line-height: 1.25;
+
+  &-1 {
+    @extend .title;
+
+    color: #c079f2;
+    font-size: 2rem;
+  }
+  &-2 {
+    @extend .title;
+
+    color: #d4ccff;
+    font-size: 3rem;
+  }
+}
+
+.description {
+  color: #d4ccff;
+  line-height: 1.5;
+}
+
+.chooser {
+  &-banner {
+    padding: 24px 0 16px 0;
+    font-size: 2rem;
+    font-weight: 700;
+
+    margin: 0 auto;
+    text-align: center;
+
+    @media (max-width: 719px) {
+      padding: 24px 0;
+    }
+  }
+
+  &-container {
+    max-width: 1000px;
+    margin: 0 auto 48px auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    flex-direction: column;
+
+    @media (max-width: 719px) {
+      margin: 0 auto;
+
+      display: flex;
+    }
+  }
+
+  &-option {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    cursor: pointer;
+
+    @media (max-width: 719px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: start;
+    }
+
+    &-indicator {
+      width: auto;
+      height: 0;
+
+      @media (max-width: 719px) {
+        width: 6px;
+        height: auto;
+        align-self: stretch;
+      }
+    }
+
+    &-icon {
+      margin: 12px 0 8px 0;
+      width: 100px;
+
+      @media (max-width: 719px) {
+        margin: 12px 0;
+        width: 64px;
+      }
+    }
+
+    &-title {
+      margin: 8px 0 28px 0;
+
+      @media (max-width: 719px) {
+        margin: 12px 0;
+      }
+
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+
+  &-content {
+    min-height: 350px;
+
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 6;
+
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 719px) {
+      flex-direction: column;
+    }
+
+    &-quick {
+      flex: 2;
+
+      padding: 36px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+
+      &-title {
+        color: white;
+
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      &-link {
+        color: white;
+
+        font-size: 0.8rem;
+
+        &:hover {
+          color: #fdfcff;
+        }
+      }
+
+      & > * {
+        display: block;
+        margin: 16px 0;
+      }
+
+      & > pre {
+        align-self: stretch;
+      }
+    }
+
+    &-guide {
+      flex: 1;
+
+      padding: 24px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+
+      cursor: pointer;
+
+      @media (max-width: 719px) {
+        justify-content: start;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      & p {
+        margin: 0;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
