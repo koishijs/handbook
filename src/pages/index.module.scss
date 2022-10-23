@@ -203,6 +203,11 @@
       gap: 8px;
 
       cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
 
       @include screen-mobile {
         justify-content: start;
