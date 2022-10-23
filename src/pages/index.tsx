@@ -277,6 +277,19 @@ const Home: React.FC = () => {
             Koishi
             是一个现代、高效的机器人框架，可以让你在几分钟内创建跨平台、可扩展、高性能的机器人。
           </p>
+          <div className={styles['buttons']}>
+            <Link
+              className="button button--primary button--lg"
+              onClick={() =>
+                window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })
+              }
+            >
+              立即下载
+            </Link>
+            <Link className="button button--secondary button--lg" to="/intro">
+              文档介绍
+            </Link>
+          </div>
         </div>
       </header>
       <main>

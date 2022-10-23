@@ -8,6 +8,13 @@
   overflow: hidden;
 }
 
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
 .logo {
   width: min(50vw, 300px);
   margin: 2rem 0;
