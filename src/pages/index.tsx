@@ -1,3 +1,5 @@
+import Link from '@docusaurus/Link'
+import { useColorMode } from '@docusaurus/theme-common'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import {
   mdiAndroid,
@@ -13,10 +15,8 @@ import Layout from '@theme/Layout'
 import TabItem from '@theme/TabItem'
 import Tabs from '@theme/Tabs'
 import clsx from 'clsx'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styles from './index.module.scss'
-import { useColorMode } from '@docusaurus/theme-common'
-import Link from '@docusaurus/Link'
 
 interface Option {
   icon: string
@@ -180,9 +180,14 @@ const options: Record<string, Option> = {
   },
 } as const
 
-const Chooser: React.FC = () => {
+const Chooser: React.FC<{ onScroll: () => void }> = (props) => {
   const [state, setState] = useState('')
-  const { isDarkTheme } = useColorMode()
+  const { colorMode } = useColorMode()
+
+  const onClick = (key: string) => {
+    setState(key)
+    props.onScroll()
+  }
 
   return (
     <div className={styles['chooser-container']}>
@@ -203,7 +208,7 @@ const Chooser: React.FC = () => {
             <div
               key={`chooser-option-${key}`}
               className={styles['chooser-option']}
-              onClick={() => setState(key)}
+              onClick={() => onClick(key)}
               style={selected ? { backgroundColor: color } : undefined}
             >
               <div
@@ -216,7 +221,7 @@ const Chooser: React.FC = () => {
                 color={
                   selected
                     ? 'white'
-                    : isDarkTheme && color === 'black'
+                    : colorMode === 'dark' && color === 'black'
                     ? 'white'
                     : color
                 }
@@ -266,9 +271,16 @@ const Home: React.FC = () => {
     logo: { alt: string; src: string }
   }
 
+  const bannerRef = useRef<HTMLElement>()
+  const scroll = () => {
+    const top = bannerRef.current.clientHeight
+    if (top > window.document.documentElement.scrollTop)
+      window.scrollTo({ top, behavior: 'smooth' })
+  }
+
   return (
     <Layout description={siteConfig.tagline}>
-      <header className={styles['banner']}>
+      <header ref={bannerRef} className={styles['banner']}>
         <div className="container">
           <img className={styles['logo']} alt={logo.alt} src={logo.src} />
           <p className={styles['title-1']}>在任何地方</p>
@@ -280,9 +292,7 @@ const Home: React.FC = () => {
           <div className={styles['buttons']}>
             <Link
               className="button button--primary button--lg"
-              onClick={() =>
-                window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })
-              }
+              onClick={scroll}
             >
               立即下载
             </Link>
@@ -296,7 +306,7 @@ const Home: React.FC = () => {
         <div className={styles['chooser-banner']}>
           <p>立刻开始</p>
         </div>
-        <Chooser />
+        <Chooser onScroll={scroll} />
       </main>
     </Layout>
   )

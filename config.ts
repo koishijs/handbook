@@ -126,7 +126,7 @@ const buildConfig = (): Config => {
           },
         ],
 
-        hideOnScroll: true,
+        // hideOnScroll: true,
       },
 
       footer: {
