@@ -126,7 +126,7 @@ const buildConfig = (): Config => {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Il Harper`,
+        copyright: `<span>Copyright © ${new Date().getFullYear()} Il Harper.&nbsp;&nbsp;</span><a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">浙ICP备2021029727号-1</a>`,
       },
 
       docs: {
