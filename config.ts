@@ -97,6 +97,26 @@ const buildConfig = (): Config => {
                 label: 'Windows',
                 docId: 'platform/win/index',
               },
+              {
+                type: 'doc',
+                label: 'macOS',
+                docId: 'platform/mac/index',
+              },
+              {
+                type: 'doc',
+                label: 'Linux',
+                docId: 'platform/linux/index',
+              },
+              {
+                type: 'doc',
+                label: 'Android',
+                docId: 'platform/android/index',
+              },
+              {
+                type: 'doc',
+                label: 'Node.js',
+                docId: 'platform/node/index',
+              },
             ],
           },
           {
@@ -122,6 +142,22 @@ const buildConfig = (): Config => {
               {
                 label: 'Windows',
                 to: '/platform/win',
+              },
+              {
+                label: 'macOS',
+                to: '/platform/mac',
+              },
+              {
+                label: 'Linux',
+                to: '/platform/linux',
+              },
+              {
+                label: 'Android',
+                to: '/platform/android',
+              },
+              {
+                label: 'Windows',
+                to: '/platform/node',
               },
             ],
           },
