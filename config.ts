@@ -89,13 +89,13 @@ const buildConfig = (): Config => {
         items: [
           {
             type: 'dropdown',
-            label: '安装',
+            label: '平台',
             position: 'right',
             items: [
               {
                 type: 'doc',
                 label: 'Windows',
-                docId: 'install/win/index',
+                docId: 'platform/win/index',
               },
             ],
           },
@@ -117,11 +117,11 @@ const buildConfig = (): Config => {
         // },
         links: [
           {
-            title: '安装',
+            title: '平台',
             items: [
               {
                 label: 'Windows',
-                to: '/install/win',
+                to: '/platform/win',
               },
             ],
           },

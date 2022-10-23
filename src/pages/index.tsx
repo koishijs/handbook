@@ -243,7 +243,7 @@ const Chooser: React.FC = () => {
                     children={children}
                   />
                   <Link
-                    to={`/install/${key}`}
+                    to={`/platform/${key}`}
                     className={styles['chooser-content-guide']}
                     style={{ backgroundColor: darkColor }}
                   >
