@@ -1,6 +1,10 @@
 {
   "extends": [
     "react-app",
+    "plugin:@docusaurus/recommended",
     "prettier"
-  ]
+  ],
+  "rules": {
+    "@docusaurus/string-literal-i18n-messages": "off"
+  }
 }
