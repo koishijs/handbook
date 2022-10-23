@@ -57,6 +57,7 @@ const buildConfig = (): Config => {
         {
           hashed: true,
           language: ['en', 'zh'],
+          docsRouteBasePath: '/',
         },
       ],
     ],
