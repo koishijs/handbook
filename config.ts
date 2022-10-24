@@ -94,31 +94,36 @@ const buildConfig = (): Config => {
             position: 'right',
             items: [
               {
-                type: 'doc',
                 label: 'Windows',
-                docId: 'platform/win/index',
+                to: '/platform/win',
               },
               {
-                type: 'doc',
                 label: 'macOS',
-                docId: 'platform/mac/index',
+                to: '/platform/mac',
               },
               {
-                type: 'doc',
                 label: 'Linux',
-                docId: 'platform/linux/index',
+                to: '/platform/linux',
               },
               {
-                type: 'doc',
                 label: 'Android',
-                docId: 'platform/android/index',
+                to: '/platform/android',
               },
               {
-                type: 'doc',
                 label: 'Node.js',
-                docId: 'platform/node/index',
+                to: '/platform/node',
               },
             ],
+          },
+          {
+            label: 'FAQ',
+            position: 'right',
+            to: 'faq/1',
+          },
+          {
+            label: '社区',
+            position: 'right',
+            to: '/community',
           },
           {
             href: 'https://github.com/koishijs/handbook',
@@ -159,6 +164,28 @@ const buildConfig = (): Config => {
               {
                 label: 'Windows',
                 to: '/platform/node',
+              },
+            ],
+          },
+          {
+            title: '帮助主题',
+            items: [
+              {
+                label: 'FAQ',
+                to: '/faq',
+              },
+            ],
+          },
+          {
+            title: '更多',
+            items: [
+              {
+                label: '社区',
+                to: '/community',
+              },
+              {
+                label: '全站搜索',
+                to: '/search',
               },
             ],
           },
