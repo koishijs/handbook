@@ -1,0 +1,18 @@
+---
+title: 插件安装显示「安装失败」
+pagination_next: null
+pagination_prev: null
+---
+
+import { FaqPre, FaqPost } from '@site/src/components/FaqCardList'
+
+<FaqPre />
+
+实际可能已经安装成功，重启 Koishi 即可在「插件配置」中添加刚刚安装的插件了。
+
+![安装失败](installation-failed.png)
+
+如果重启后在「插件配置」的「添加插件」下拉框中仍无法找到插件，
+尝试查看控制台中的「日志」视图中所输出的日志。里面可能输出了插件加载失败的原因。
+
+<FaqPost />

@@ -1,0 +1,21 @@
+---
+title: 如何把 Koishi 控制台部署到公网？
+pagination_next: null
+pagination_prev: null
+---
+
+import { FaqPre, FaqPost } from '@site/src/components/FaqCardList'
+
+<FaqPre />
+
+1. 按照『[「必需服务：database」是什么？](/faq/4)』中的方法安装任意数据库插件
+1. 在群里发言，此时机器人会自动帮你创建用户数据
+1. 启动 `dataview` 插件，在网页中找到自己的数据并将 `authority` 设置为 `4` 或者更高
+1. 添加并启用 `auth` 插件
+1. 参考 [官方文档-在服务器上安装](https://docs.koishi.chat/manual/starter/server.html) 中的步骤将控制台对公网开放
+
+现在，你可以在公网访问 Koishi 控制台了！「插件配置」页面只有在你登录后才可见。
+
+> 另请参阅：[koishijs/novelai-bot#13](https://github.com/koishijs/novelai-bot/issues/13)
+
+<FaqPost />
