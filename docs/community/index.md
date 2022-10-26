@@ -8,6 +8,14 @@ sidebar_position: 1
 
 ## 用户支持
 
+### Koishi 用户群
+
+[391463133](https://jq.qq.com/?_wv=1027&k=z2kKtk3N)
+
+本群适用于刚刚入门 Koishi，或者在 Koishi 的使用过程中遇到了问题，希望得到解答的用户——这里有热情的群友随时解答你的问题！
+
+> 我们也有一个 [开发者群](#开发者群)！
+
 ### Koishi 使用手册
 
 这本手册本身就是本着为 Koishi 用户快速入门的目的而设立的。
@@ -28,6 +36,14 @@ sidebar_position: 1
 
 [Koishi 的官方文档](https://docs.koishi.chat) 中包含了所有对 Koishi 框架的官方说明和指导，
 你可以在这里找到最具权威的开发指南和 API 参考。
+
+### Koishi 开发者群
+
+[426230045](https://jq.qq.com/?_wv=1027&k=6FDoxQ6g)
+
+本群适用于已经有一定 Node.js/TypeScript 基础，并对 Koishi 开发感兴趣的用户——你可以在这里参与 Koishi 以及其他相关话题的深度讨论。
+
+> 我们也有一个 [用户群](#用户群)！
 
 ### GitHub Discussion
 
