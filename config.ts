@@ -116,6 +116,11 @@ const buildConfig = (): Config => {
             ],
           },
           {
+            label: '配方',
+            position: 'right',
+            to: 'recipes/1',
+          },
+          {
             label: 'FAQ',
             position: 'right',
             to: 'faq/1',
