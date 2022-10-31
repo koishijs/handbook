@@ -1,0 +1,21 @@
+---
+title: 如何禁止 Koishi 每次启动时都弹出控制台？
+sidebar_position: 15
+pagination_next: null
+pagination_prev: null
+---
+
+import { FaqPre, FaqPost } from '@site/src/components/FaqCardList'
+
+<FaqPre />
+
+Koishi 会在每次启动时都默认弹出控制台，但这有时候会变得很烦人。
+
+你可以按照下面的方法禁用这一功能：
+
+首先，按照『[「Koishi 桌面」（Koishi Desktop）配置文件在哪里？](/faq/14)』中的方法找到你的 Koishi
+桌面配置文件；然后，在配置文件内加入 `open: none`。
+
+保存并重启 Koishi 桌面，控制台将不会再弹出。
+
+<FaqPost />
