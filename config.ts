@@ -167,7 +167,7 @@ const buildConfig = (): Config => {
                 to: '/platform/android',
               },
               {
-                label: 'Windows',
+                label: 'Node.js',
                 to: '/platform/node',
               },
             ],
