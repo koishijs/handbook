@@ -1,0 +1,51 @@
+---
+title: 部署至服务器
+sidebar_position: 6
+---
+
+如果你希望在服务器（尤其是没有桌面环境的 Linux Server）上部署 Koishi，你需要做下面的事情：
+
+## 配置公网暴露
+
+### 使用反向代理
+
+例如，使用 Nginx，可以参考下面的配置：
+
+```conf
+server {
+  location / {
+    # 这里的 8080 对应 Koishi 实例的端口
+    proxy_pass http://127.0.0.1:8080;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+  }
+}
+```
+
+### 直接暴露
+
+如果你希望将 Koishi 直接暴露在公网，
+那么你需要按照『[「Koishi 配置文件」在哪里？](/faq/6)』中的方法找到 Koishi 配置文件 `koishi.yml`，
+然后将 `host` 一项改为 `0.0.0.0`。
+
+## 配置 CLI 模式
+
+首先，按照『[「Koishi 桌面」（Koishi Desktop）配置文件在哪里？](/faq/14)』中的方法找到你的 Koishi
+桌面配置文件；然后，在配置文件内加入 `mode: cli`。
+
+## 守护
+
+Koishi 自带守护功能，你无需使用守护软件运行 Koishi。
+
+以下是与守护相关的命令：
+
+| 命令                  | 功能               |
+| --------------------- | ------------------ |
+| `koi`                 | 无守护启动         |
+| `koi daemon start`    | 启动守护           |
+| `koi daemon stop`     | 停止守护           |
+| `koi daemon kill`     | 强制结束守护       |
+| `koi ps`              | 查看运行状态       |
+| `koi start default`   | 启动实例 `default` |
+| `koi stop default`    | 停止实例 `default` |
+| `koi restart default` | 重启实例 `default` |

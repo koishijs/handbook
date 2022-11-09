@@ -3,6 +3,9 @@ title: 接入 QQ
 sidebar_position: 3
 ---
 
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
 将 Koishi 接入 QQ 不算简单也不算复杂；你需要应对登录时的各种情况，
 但幸运的是，你不需要修改配置文件也不需要编写代码，一切都可以在 Koishi 控制台中完成。
 
@@ -28,23 +31,27 @@ sidebar_position: 3
 
 ![登录](login.png)
 
-## 使用滑条验证码
+<Tabs groupId="qq-login">
+<TabItem value="slider" label="滑条验证码" default>
 
 如果你所在的网络环境可以打开滑条验证码，那么你可以使用这种方式登录。
 在没有登录风险的环境下，这是最便捷的登录方式，因为它不需要扫码或接收验证码。
 
-## 扫码
+</TabItem>
+<TabItem value="qrcode" label="扫码">
 
 扫码是最常用的登录方式。Koishi 需要和你扫码的手机位于同一网络环境下。
 
-如果 Koishi 和扫码的手机不在同一网络环境下而导致扫码失败的话，可以试试下面的其他方式。
+如果 Koishi 和扫码的手机不在同一网络环境下而导致扫码失败的话，可以试试其他方式。
 
-## 扫码 + 网络隧道
+</TabItem>
+<TabItem value="tunnel" label="扫码 + 网络隧道">
 
 假设你在另外的网络环境内登录，那么你可以先将自己的手机连接到 Koishi 所在的网络，
 然后再进行扫码，即可完成登录。
 
-## 扫码 + 配置迁移
+</TabItem>
+<TabItem value="migrate" label="扫码 + 配置迁移">
 
 如果上述方式都未能成功，那么你可以使用这种方式登录。
 
@@ -55,3 +62,20 @@ sidebar_position: 3
 3. 将 `accounts` 文件夹复制粘贴到远程设备 Koishi 的实例根目录里，覆盖远程设备已有的文件夹；
 
 4. 在远程设备的 Koishi 上重新登录。你应当可以正常登录。
+
+</TabItem>
+</Tabs>
+
+## 常见问题
+
+### Koishi 没有提示我使用哪种方法登录，而是直接报错。
+
+按照下列步骤操作：
+
+1. 停用 `onebot` 插件，保存，停止并退出 Koishi
+2. 按照『[「Koishi 配置文件」在哪里？](/faq/6)』中的方法找到用户数据文件夹，并完全删除里面的 `accounts` 文件夹
+3. 重新打开 Koishi，启用 `onebot` 插件
+
+### 我已按照上面的方法操作，Koishi 仍然没有提示我使用哪种方法登录。
+
+你的 IP 被列入了黑名单。你可以使用上面提到的「扫码 + 网络隧道」方法登录。
