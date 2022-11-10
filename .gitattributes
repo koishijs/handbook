@@ -2,3 +2,4 @@
 
 *.png -text
 *.ico -text
+*.webp -text
