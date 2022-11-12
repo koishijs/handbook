@@ -37,7 +37,7 @@ const options: Record<string, Option> = {
         <p className={styles['chooser-content-quick-title']}>立即下载</p>
         <a
           className="button button--secondary"
-          href="http://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.7.1/koishi-desktop-win-x64-v0.7.1.msi"
+          href="https://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.8.1/koishi-desktop-win-x64-v0.8.1.msi"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -45,7 +45,7 @@ const options: Record<string, Option> = {
         </a>
         <a
           className="button button--secondary"
-          href="http://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.7.1/koishi-desktop-win-x64-v0.7.1.zip"
+          href="https://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.8.1/koishi-desktop-win-x64-v0.8.1.zip"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -72,7 +72,7 @@ const options: Record<string, Option> = {
         <p className={styles['chooser-content-quick-title']}>立即下载</p>
         <a
           className="button button--secondary"
-          href="http://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.7.1/koishi-desktop-osx-x64-v0.7.1.pkg"
+          href="https://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.8.1/koishi-desktop-osx-x64-v0.8.1.pkg"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -80,7 +80,7 @@ const options: Record<string, Option> = {
         </a>
         <a
           className="button button--secondary"
-          href="http://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.7.1/koishi-desktop-osx-x64-v0.7.1.zip"
+          href="https://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.8.1/koishi-desktop-osx-x64-v0.8.1.zip"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -107,7 +107,7 @@ const options: Record<string, Option> = {
         <p className={styles['chooser-content-quick-title']}>立即下载</p>
         <a
           className="button button--secondary"
-          href="http://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.7.1/koishi-desktop-linux-x64-v0.7.1.zip"
+          href="https://ghproxy.com/https://github.com/koishijs/koishi-desktop/releases/download/v0.8.1/koishi-desktop-linux-x64-v0.8.1.zip"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -134,7 +134,7 @@ const options: Record<string, Option> = {
         <p className={styles['chooser-content-quick-title']}>立即下载</p>
         <a
           className="button button--secondary"
-          href="http://ghproxy.com/https://github.com/koishijs/koishi-android/releases/download/v0.0.3/koishi-android-v0.0.3.apk"
+          href="https://ghproxy.com/https://github.com/koishijs/koishi-android/releases/download/v0.0.3/koishi-android-v0.0.3.apk"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -142,7 +142,7 @@ const options: Record<string, Option> = {
         </a>
         <a
           className="button button--secondary"
-          href="http://ghproxy.com/https://github.com/koishijs/koishi-android/releases/download/v0.0.3/koishi-android-with-chromium-v0.0.3.apk"
+          href="https://ghproxy.com/https://github.com/koishijs/koishi-android/releases/download/v0.0.3/koishi-android-with-chromium-v0.0.3.apk"
           target="_blank"
           rel="noopener noreferrer"
         >
