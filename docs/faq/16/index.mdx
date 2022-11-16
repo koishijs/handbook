@@ -7,6 +7,9 @@ pagination_prev: null
 
 import { FaqPre, FaqPost } from '@site/src/components/FaqCardList'
 
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
 <FaqPre />
 
 有时你可能搞乱了配置或者一些文件，但是又不知道搞坏了哪里，
@@ -14,13 +17,20 @@ import { FaqPre, FaqPost } from '@site/src/components/FaqCardList'
 
 你可以按照下面的方法进行全新安装：
 
+<Tabs groupId="is-android">
+<TabItem value="no" label="Koishi 桌面" default>
+
 1. 完全卸载 Koishi 桌面
 2. 按照『[「Koishi 配置文件」在哪里？](/faq/6)』中的方法找到用户数据文件夹，并完全删除
 3. 下载 [最新版本的 Koishi 桌面](https://koishi.chat/manual/starter/)
 
-安卓用户重新安装Koishi的方法：
+</TabItem>
+<TabItem value="yes" label="Koishi Android">
 
-1. 长按Koishi图标，选择「应用设置 - 存储 - 清除存储」
-2. 再次启动Koishi
+1. 长按 Koishi 图标，选择「应用设置 - 存储 - 清除存储」
+2. 再次启动 Koishi
+
+</TabItem>
+</Tabs>
 
 <FaqPost />
