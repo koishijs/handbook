@@ -176,6 +176,10 @@ const buildConfig = (): Config => {
             title: '帮助主题',
             items: [
               {
+                label: '文档介绍',
+                to: '/intro',
+              },
+              {
                 label: '配方',
                 to: '/recipes',
               },
