@@ -1,0 +1,11 @@
+.container {
+  margin-bottom: 1em;
+}
+
+.content {
+  cursor: pointer;
+}
+
+.content > :last-child {
+  margin-bottom: 0;
+}
