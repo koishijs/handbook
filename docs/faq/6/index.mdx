@@ -7,14 +7,26 @@ pagination_prev: null
 
 import { FaqPre, FaqPost } from '@site/src/components/FaqCardList'
 
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
 <FaqPre />
 
 配置文件所在的目录叫根目录。根据你的安装方式，根目录的位置可能不同：
 
-- 使用模板创建：创建的文件夹就是你的根目录
-- Koishi Desktop - zip 便携包：解压目录下 `data/instances/default`
-- Koishi Desktop - msi 安装包：`C:/Users/你的用户名/AppData/Roaming/Il Harper/Koishi/data/instances/default`
-- Koishi Desktop - pkg 安装包：`~/Library/Application Support/Il Harper/Koishi/data/instances/default`
+<Tabs groupId="is-android">
+<TabItem value="no" label="Koishi 桌面" default>
+
+点按通知区域的 Koishi 桌面图标，然后选择「高级 - 打开数据文件夹」，在打开的文件夹中依次进入 `instances/default` 文件夹。
+
+</TabItem>
+<TabItem value="yes" label="Koishi Android">
+
+Koishi Android 不支持直接访问应用数据。你需要导出整合包，然后对导出的 zip 进行修改。zip
+的根目录就是 Koishi 的根目录。
+
+</TabItem>
+</Tabs>
 
 配置文件是根目录下名为 `koishi.yml` 的文件。当你遇到问题时，开发者可能会要求你提供配置文件的内容。此时去上面的地方找就好了。
 
