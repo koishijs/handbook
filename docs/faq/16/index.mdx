@@ -13,24 +13,46 @@ import TabItem from '@theme/TabItem'
 <FaqPre />
 
 有时你可能搞乱了配置或者一些文件，但是又不知道搞坏了哪里，
-此时一次完全的重新安装（双清）可能会解决这些问题。
+此时一次完全的重新安装可能会解决这些问题。
 
 你可以按照下面的方法进行全新安装：
 
 <Tabs groupId="is-android">
 <TabItem value="no" label="Koishi 桌面" default>
 
-1. 完全卸载 Koishi 桌面
-2. 按照『[「Koishi 配置文件」在哪里？](/faq/6)』中的方法找到用户数据文件夹，并完全删除
-3. 下载 [最新版本的 Koishi 桌面](https://koishi.chat/manual/starter/)
+Koishi 桌面的卸载和清理方式分为单清、双清和三清。你需要按步骤依次进行清理。
+
+### 单清
+
+在控制面板中卸载 Koishi 桌面。
+
+该方式只会卸载 Koishi 桌面本体，不会影响用户数据。
+
+### 双清
+
+按照『[「Koishi 配置文件」在哪里？](/faq/6)』中的方法找到用户数据文件夹，并完全删除。
+
+该方式会永久清除所有用户数据。
+
+### 三清
+
+对于 Koishi 桌面 v0.9.x 以前的版本，还需清理如下目录：
+
+- msi 安装包：`C:/Users/你的用户名/AppData/Roaming/Il Harper/Koishi/data/instances/default`
+- pkg 安装包：`~/Library/Application Support/Il Harper/Koishi/data/instances/default`
+
+v0.9.x 以后的 Koishi 桌面用户不存在此文件夹，也无需清理。
 
 </TabItem>
 <TabItem value="yes" label="Koishi Android">
 
-1. 长按 Koishi 图标，选择「应用设置 - 存储 - 清除存储」
-2. 再次启动 Koishi
+可以直接卸载 Koishi 应用。用户数据会被一并清除。
+
+如果想保留用户数据，可以在卸载前导出 Koishi 整合包。
 
 </TabItem>
 </Tabs>
+
+最后，你需要下载 [最新版本的 Koishi 桌面](https://koishi.chat/manual/starter/)。
 
 <FaqPost />
